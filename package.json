@@ -1,8 +1,8 @@
 {
   "name": "whaletodo",
-  "productName": "鲸鱼待办",
-  "version": "0.2.0",
-  "description": "鲸鱼待办 — 分组式待办管理，活跃事项到期自动沉淀",
+  "productName": "椴搁奔寰呭姙",
+  "version": "0.2.1",
+  "description": "椴搁奔寰呭姙 鈥?鍒嗙粍寮忓緟鍔炵鐞嗭紝娲昏穬浜嬮」鍒版湡鑷姩娌夋穩",
   "author": "wafernm-crypto",
   "license": "MIT",
   "private": true,
@@ -50,7 +50,7 @@
   },
   "build": {
     "appId": "io.github.wafern.whaletodo",
-    "productName": "鲸鱼待办",
+    "productName": "椴搁奔寰呭姙",
     "directories": {
       "output": "release",
       "buildResources": "build"
@@ -88,7 +88,7 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "shortcutName": "鲸鱼待办"
+      "shortcutName": "椴搁奔寰呭姙"
     }
   }
 }
