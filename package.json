@@ -1,8 +1,8 @@
 {
   "name": "whaletodo",
-  "productName": "椴搁奔寰呭姙",
-  "version": "0.2.1",
-  "description": "椴搁奔寰呭姙 鈥?鍒嗙粍寮忓緟鍔炵鐞嗭紝娲昏穬浜嬮」鍒版湡鑷姩娌夋穩",
+  "productName": "鲸鱼待办",
+  "version": "0.2.2",
+  "description": "鲸鱼待办 — 分组式待办管理，活跃事项到期自动沉淀",
   "author": "wafernm-crypto",
   "license": "MIT",
   "private": true,
@@ -16,14 +16,7 @@
   "bugs": {
     "url": "https://github.com/wafernm-crypto/whaletodo/issues"
   },
-  "keywords": [
-    "todo",
-    "electron",
-    "react",
-    "typescript",
-    "task-manager",
-    "desktop"
-  ],
+  "keywords": ["todo", "electron", "react", "typescript", "task-manager", "desktop"],
   "scripts": {
     "dev": "node scripts/dev.mjs",
     "dev:web": "vite",
@@ -50,7 +43,7 @@
   },
   "build": {
     "appId": "io.github.wafern.whaletodo",
-    "productName": "椴搁奔寰呭姙",
+    "productName": "鲸鱼待办",
     "directories": {
       "output": "release",
       "buildResources": "build"
@@ -64,21 +57,15 @@
       "target": [
         {
           "target": "nsis",
-          "arch": [
-            "x64"
-          ]
+          "arch": ["x64"]
         },
         {
           "target": "portable",
-          "arch": [
-            "x64"
-          ]
+          "arch": ["x64"]
         },
         {
           "target": "zip",
-          "arch": [
-            "x64"
-          ]
+          "arch": ["x64"]
         }
       ],
       "icon": "build/icon.ico",
@@ -88,7 +75,7 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "createDesktopShortcut": true,
-      "shortcutName": "椴搁奔寰呭姙"
+      "shortcutName": "鲸鱼待办"
     }
   }
 }
