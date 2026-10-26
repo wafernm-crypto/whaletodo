@@ -34,13 +34,35 @@ jobs:
       - name: 打包
         run: npx electron-builder --win nsis portable zip --publish never
 
+      # GitHub Release 上传时会丢掉文件名里的中文（鲸鱼待办 → 空），
+      # 所以统一改成 ASCII 文件名，安装后的应用名仍然是「鲸鱼待办」。
+      - name: 规范产物文件名
+        shell: pwsh
+        run: |
+          $version = (Get-Content package.json -Raw | ConvertFrom-Json).version
+          Get-ChildItem release -File | Where-Object {
+            $_.Extension -in '.exe', '.zip' -and $_.Name -notlike '*__uninstaller*'
+          } | ForEach-Object {
+            $new = if ($_.Name -like '*Setup*') {
+              "WhaleTodo-$version-Setup.exe"
+            } elseif ($_.Extension -eq '.zip') {
+              "WhaleTodo-$version-win-x64.zip"
+            } else {
+              "WhaleTodo-$version-Portable.exe"
+            }
+            if ($_.Name -ne $new) {
+              Move-Item $_.FullName (Join-Path $_.DirectoryName $new) -Force
+            }
+          }
+          Get-ChildItem release -File -Include *.exe, *.zip | Select-Object Name, Length
+
       - name: 上传构建产物
         uses: actions/upload-artifact@v4
         with:
           name: whaletodo-windows
           path: |
-            release/*.exe
-            release/*.zip
+            release/WhaleTodo-*.exe
+            release/WhaleTodo-*.zip
           if-no-files-found: error
 
       - name: 发布到 GitHub Release
@@ -48,8 +70,8 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           files: |
-            release/*.exe
-            release/*.zip
+            release/WhaleTodo-*.exe
+            release/WhaleTodo-*.zip
           generate_release_notes: true
           draft: false
           prerelease: false
