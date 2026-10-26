@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 2,
+  "groups": [
+    {
+      "id": "g-work",
+      "name": "工作",
+      "color": "#3D7EA6",
+      "createdAt": "2026-09-26T08:00:00.000Z",
+      "order": 0,
+      "rule": { "autoInactiveDays": 7, "countFrom": "created", "maxActive": 3 }
+    },
+    {
+      "id": "g-life",
+      "name": "生活",
+      "color": "#2E9E86",
+      "createdAt": "2026-09-26T08:00:00.000Z",
+      "order": 1,
+      "rule": { "autoInactiveDays": 14, "countFrom": "activated", "maxActive": null }
+    }
+  ],
+  "tasks": [
+    {
+      "id": "t1",
+      "groupId": "g-work",
+      "title": "把待办列表的交互再顺一遍",
+      "note": "状态标签点一下就能切换",
+      "status": "active",
+      "createdAt": "2026-10-26T01:00:00.000Z",
+      "activatedAt": "2026-10-26T01:00:00.000Z",
+      "statusChangedAt": "2026-10-26T01:00:00.000Z",
+      "completedAt": null,
+      "restartedAt": null,
+      "rule": null,
+      "order": 0,
+      "updatedAt": "2026-10-26T01:00:00.000Z"
+    },
+    {
+      "id": "t2",
+      "groupId": "g-work",
+      "title": "给每个事项配自定义沉淀条件",
+      "note": "点右侧设置按钮，单独设 3 天",
+      "status": "active",
+      "createdAt": "2026-10-25T22:00:00.000Z",
+      "activatedAt": "2026-10-25T22:00:00.000Z",
+      "statusChangedAt": "2026-10-25T22:00:00.000Z",
+      "completedAt": null,
+      "restartedAt": null,
+      "rule": { "autoInactiveDays": 3, "countFrom": "activated" },
+      "order": 1,
+      "updatedAt": "2026-10-25T22:00:00.000Z"
+    },
+    {
+      "id": "t3",
+      "groupId": "g-work",
+      "title": "验证活跃上限提示",
+      "note": "这组最多 3 个活跃，现在满了",
+      "status": "active",
+      "createdAt": "2026-10-25T01:00:00.000Z",
+      "activatedAt": "2026-10-25T01:00:00.000Z",
+      "statusChangedAt": "2026-10-25T01:00:00.000Z",
+      "completedAt": null,
+      "restartedAt": null,
+      "rule": null,
+      "order": 2,
+      "updatedAt": "2026-10-25T01:00:00.000Z"
+    },
+    {
+      "id": "t4",
+      "groupId": "g-work",
+      "title": "整理上周的需求清单",
+      "note": "",
+      "status": "inactive",
+      "createdAt": "2026-10-14T02:00:00.000Z",
+      "activatedAt": "2026-10-14T02:00:00.000Z",
+      "statusChangedAt": "2026-10-23T03:00:00.000Z",
+      "completedAt": null,
+      "restartedAt": null,
+      "rule": null,
+      "order": 3,
+      "updatedAt": "2026-10-23T03:00:00.000Z"
+    },
+    {
+      "id": "t5",
+      "groupId": "g-work",
+      "title": "跑通打包与安装流程",
+      "note": "",
+      "status": "done",
+      "createdAt": "2026-10-25T00:30:00.000Z",
+      "activatedAt": "2026-10-25T00:30:00.000Z",
+      "statusChangedAt": "2026-10-26T02:30:00.000Z",
+      "completedAt": "2026-10-26T02:30:00.000Z",
+      "restartedAt": null,
+      "rule": null,
+      "order": 0,
+      "updatedAt": "2026-10-26T02:30:00.000Z"
+    }
+  ],
+  "settings": {
+    "lastGroupId": "g-work",
+    "defaultRule": { "autoInactiveDays": 7, "countFrom": "created", "maxActive": null }
+  }
+}

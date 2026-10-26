@@ -1,0 +1,29 @@
+# 依赖与构建产物
+node_modules/
+dist/
+release/
+
+# 本机打包缓存（体积大，不入库）
+.tmp/
+.builder-cache/
+.electron-cache/
+.electron-dist/
+
+# 测试与截图产生的临时文件
+build/chrome-cdp/
+build/chrome-profile/
+build/*.log
+build/app-*.png
+build/ui-*.png
+*.log
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# 本地数据（应用运行时写在外面，这里兜底）
+data.json
+data.bak.json

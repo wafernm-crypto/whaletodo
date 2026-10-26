@@ -1,0 +1,94 @@
+{
+  "name": "whaletodo",
+  "productName": "鲸鱼待办",
+  "version": "0.2.0",
+  "description": "鲸鱼待办 — 分组式待办管理，活跃事项到期自动沉淀",
+  "author": "wafernm-crypto",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "main": "electron/main.mjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wafernm-crypto/whaletodo.git"
+  },
+  "homepage": "https://github.com/wafernm-crypto/whaletodo",
+  "bugs": {
+    "url": "https://github.com/wafernm-crypto/whaletodo/issues"
+  },
+  "keywords": [
+    "todo",
+    "electron",
+    "react",
+    "typescript",
+    "task-manager",
+    "desktop"
+  ],
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite",
+    "build:web": "tsc --noEmit && vite build",
+    "start": "node scripts/start.mjs",
+    "preview": "node scripts/serve.mjs 4178",
+    "pack:dir": "npm run build:web && node scripts/package.mjs --win --dir",
+    "dist": "npm run build:web && node scripts/package.mjs --win nsis portable zip",
+    "dist:ci": "npm run build:web && electron-builder --win nsis portable zip --publish never"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "rcedit": "^5.0.1",
+    "typescript": "^5.7.2",
+    "vite": "^5.4.11"
+  },
+  "build": {
+    "appId": "io.github.wafern.whaletodo",
+    "productName": "鲸鱼待办",
+    "directories": {
+      "output": "release",
+      "buildResources": "build"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "zip",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "signAndEditExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "shortcutName": "鲸鱼待办"
+    }
+  }
+}
